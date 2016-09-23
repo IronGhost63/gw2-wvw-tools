@@ -1,6 +1,9 @@
 # GW2 WvW Tools
 Command line tool for quick checking wvw score in Guild Wars 2
 
+I created this lil script just for weekly wvw summary on [Tyria.in.th](https://tyria.in.th)
+There will be more features coming in the future.
+
 ## Usage
 ```
 $ php wvwscore.php
