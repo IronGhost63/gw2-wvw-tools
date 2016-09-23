@@ -7,3 +7,7 @@ $ php wvwscore.php
 ```
 
 no option atm. will add later. xoxo
+
+## Planned
+* View Score by Match ID
+* Victory Scores (after Anet done their job implemented it into API)
