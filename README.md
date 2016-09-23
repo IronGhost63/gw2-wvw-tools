@@ -10,4 +10,6 @@ no option atm. will add later. xoxo
 
 ## Planned
 * View Score by Match ID
+* Detailed info about maps and objectives
 * Victory Scores (after Anet implemented it into API)
+* Turn this thing into a PHAR app
