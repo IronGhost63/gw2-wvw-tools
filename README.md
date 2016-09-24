@@ -9,7 +9,12 @@ There will be more features coming in the future.
 $ php wvwscore.php
 ```
 
-no option atm. will add later. xoxo
+### View Score by Zone
+add option --zone <zone>
+```
+$ php wvwscore.php --zone na
+$ php wvwscore.php --zone eu
+```
 
 ## Planned
 * View Score by Match ID
