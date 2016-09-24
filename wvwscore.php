@@ -20,7 +20,7 @@ $arrContextOptions=array(
     ),
 );
 
-$server_name_raw = json_decode(file_get_contents("http://api.guildwars2.com/v1/world_names", false, stream_context_create($arrContextOptions)));
+$server_name_raw = json_decode(file_get_contents("https://api.guildwars2.com/v2/worlds?ids=all", false, stream_context_create($arrContextOptions)));
 $server_name = array();
 
 foreach($server_name_raw as $single){
