@@ -70,19 +70,19 @@ foreach($matches as $match){
 	echo "    - Score: ". number_format($team['red']['scores'], "0", "", ",") ."\n";
 	echo "    - Kills: ". number_format($team['red']['kills'], "0", "", ",") ."\n";
 	echo "    - Deaths: ". number_format($team['red']['deaths'], "0", "", ",") ."\n";
-	echo "    - KDR: ". number_format(($team['red']['kills']/$team['red']['deaths']), 2, '.', '') ."\n";
+	echo "    - KDR: ". @number_format(($team['red']['kills']/$team['red']['deaths']), 2, '.', '') ."\n";
 
 	echo "   Blue Team: ". $server_name[$team['blue']['host']] ." ".$guest_name['blue']."\n";
 	echo "    - Score: ". number_format($team['blue']['scores'], "0", "", ",") ."\n";
 	echo "    - Kills: ". number_format($team['blue']['kills'], "0", "", ",") ."\n";
 	echo "    - Deaths: ". number_format($team['blue']['deaths'], "0", "", ",") ."\n";
-	echo "    - KDR: ". number_format(($team['blue']['kills']/$team['blue']['deaths']), 2, '.', '') ."\n";
+	echo "    - KDR: ". @number_format(($team['blue']['kills']/$team['blue']['deaths']), 2, '.', '') ."\n";
 
 	echo "   Green Team: ". $server_name[$team['green']['host']] ." ".$guest_name['green']."\n";
 	echo "    - Score: ". number_format($team['green']['scores'], "0", "", ",") ."\n";
 	echo "    - Kills: ". number_format($team['green']['kills'], "0", "", ",") ."\n";
 	echo "    - Deaths: ". number_format($team['green']['deaths'], "0", "", ",") ."\n";
-	echo "    - KDR: ". number_format(($team['green']['kills']/$team['green']['deaths']), 2, '.', '') ."\n";
+	echo "    - KDR: ". @number_format(($team['green']['kills']/$team['green']['deaths']), 2, '.', '') ."\n";
 
 	unset($guest_name);
 }
