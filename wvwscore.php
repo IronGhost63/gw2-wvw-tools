@@ -1,4 +1,18 @@
 <?php
+
+/**
+ * Get commandline args
+ */
+$opt_short = "";
+$opt_long = array(
+	"zone:"
+);
+
+$options = getopt($opt_short, $opt_long);
+
+/**
+ * Get Server Name
+ */
 $arrContextOptions=array(
     "ssl"=>array(
         "verify_peer"=>false,
@@ -13,10 +27,20 @@ foreach($server_name_raw as $single){
 	$server_name[$single->id] = $single->name;
 }
 
-$matches = array(
-	'1-1', '1-2', '1-3', '1-4',
-	'2-1', '2-2', '2-3', '2-4', '2-5'
+/**
+ * Zone selection
+ */
+
+$matches_zone = array(
+	'na' => array('1-1', '1-2', '1-3', '1-4'),
+	'eu' => array('2-1', '2-2', '2-3', '2-4', '2-5')
 );
+
+if( in_array( $options['zone'], array('na', eu) ) ) {
+	$matches = $matches_zone[$options['zone']];
+}else{
+	$matches = array_merge( $matches_zone['na'], $matches_zone['eu'] );
+}
 
 $wvwscore_base = "http://api.guildwars2.com/v2/wvw/matches/";
 
