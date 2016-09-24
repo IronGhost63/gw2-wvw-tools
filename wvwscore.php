@@ -5,7 +5,9 @@
  */
 $opt_short = "";
 $opt_long = array(
-	"zone:"
+	"zone:",
+	"match:",
+	"template:"
 );
 
 $options = getopt($opt_short, $opt_long);
@@ -42,7 +44,16 @@ if( in_array( $options['zone'], array('na', eu) ) ) {
 	$matches = array_merge( $matches_zone['na'], $matches_zone['eu'] );
 }
 
-$wvwscore_base = "http://api.guildwars2.com/v2/wvw/matches/";
+/**
+ * Matches selection
+ * Match option will override Zone option
+ */
+
+if(isset($options['match'])){
+	$matches = explode(",", $options['match']);
+}
+
+$wvwscore_base = "https://api.guildwars2.com/v2/wvw/matches/";
 
 foreach($matches as $match){
 	$score = json_decode(file_get_contents($wvwscore_base.$match, false, stream_context_create($arrContextOptions)));

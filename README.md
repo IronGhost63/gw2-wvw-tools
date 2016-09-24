@@ -16,8 +16,22 @@ $ php wvwscore.php --zone na
 $ php wvwscore.php --zone eu
 ```
 
+### View Score by Match
+add option --match <match id>
+
+get multiple matches by adding comma
+```
+$ php wvwscore.php --match 1-4
+$ php wvwscore.php --match 1-3,1-4
+```
+_* This will override --zone option_
+
+> Match ID consist with 2 value and concat with -
+> first value represent server zone. which 1 = NA, 2 = EU
+> second value represent match tier.
+> So, if you want score of NA tier 4, match id will be 1-4
+
 ## Planned
-* View Score by Match ID
 * Detailed info about maps and objectives
 * Victory Scores (after Anet implemented it into API)
 * Turn this thing into a PHAR app
