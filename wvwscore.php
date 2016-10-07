@@ -38,7 +38,7 @@ $matches_zone = array(
 	'eu' => array('2-1', '2-2', '2-3', '2-4', '2-5')
 );
 
-if( in_array( $options['zone'], array('na', eu) ) ) {
+if( in_array( $options['zone'], array('na', 'eu') ) ) {
 	$matches = $matches_zone[$options['zone']];
 }else{
 	$matches = array_merge( $matches_zone['na'], $matches_zone['eu'] );
@@ -88,6 +88,12 @@ foreach($matches as $match){
 			'kills' => $score->kills->green,
 			'deaths' => $score->deaths->green
 		)
+	);
+
+	$guest_name = array(
+		'red' => '',
+		'green' => '',
+		'blue' => ''
 	);
 
 	$color = array('red', 'blue', 'green');
