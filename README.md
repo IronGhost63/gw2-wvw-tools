@@ -31,6 +31,16 @@ _* This will override --zone option_
 > second value represent match tier. <br/>
 > So, if you want score of NA tier 4, match id will be 1-4 <br/>
 
+### Template
+Why on earth I need template for this thing? As I stated above (or not?), I created this lil tool for weekly report on my website. So I added template support to be able to generate ready-to-use html code for WordPress.
+
+add option --template <filename>
+```
+$ php wvwscore.php --template template.html
+```
+
+This is very crude and stupid (but work for me) template engine. See template.html for usable tag.
+
 ## Planned
 * Detailed info about maps and objectives
 * Victory Scores (after Anet implemented it into API)
