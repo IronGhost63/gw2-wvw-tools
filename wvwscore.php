@@ -93,7 +93,8 @@ foreach($matches as $match){
 			'guests' => array_diff($score->all_worlds->red, array($score->worlds->red)),
 			'scores' => $score->scores->red,
 			'kills' => $score->kills->red,
-			'deaths' => $score->deaths->red
+			'deaths' => $score->deaths->red,
+			'v_scores' => $score->victory_points->red
 
 		),
 		'blue' => array(
@@ -101,14 +102,16 @@ foreach($matches as $match){
 			'guests' => array_diff($score->all_worlds->blue, array($score->worlds->blue)),
 			'scores' => $score->scores->blue,
 			'kills' => $score->kills->blue,
-			'deaths' => $score->deaths->blue
+			'deaths' => $score->deaths->blue,
+			'v_scores' => $score->victory_points->blue
 		),
 		'green' => array(
 			'host' => $score->worlds->green,
 			'guests' => array_diff($score->all_worlds->green, array($score->worlds->green)),
 			'scores' => $score->scores->green,
 			'kills' => $score->kills->green,
-			'deaths' => $score->deaths->green
+			'deaths' => $score->deaths->green,
+			'v_scores' => $score->victory_points->green
 		)
 	);
 
@@ -155,19 +158,22 @@ foreach($matches as $match){
 		echo $output;
 	}else{
 		echo "   Red Team: ". $server_name[$team['red']['host']] ." ".$guest_name['red']."\n";
-		echo "    - Score: ". number_format($team['red']['scores'], "0", "", ",") ."\n";
+		echo "    - Victory Point: ". number_format($team['red']['v_scores'], "0", "", ",") . "\n";
+		echo "    - Total War Score: ". number_format($team['red']['scores'], "0", "", ",") ."\n";
 		echo "    - Kills: ". number_format($team['red']['kills'], "0", "", ",") ."\n";
 		echo "    - Deaths: ". number_format($team['red']['deaths'], "0", "", ",") ."\n";
 		echo "    - KDR: ". @number_format(($team['red']['kills']/$team['red']['deaths']), 2, '.', '') ."\n";
 
 		echo "   Blue Team: ". $server_name[$team['blue']['host']] ." ".$guest_name['blue']."\n";
-		echo "    - Score: ". number_format($team['blue']['scores'], "0", "", ",") ."\n";
+		echo "    - Victory Point: ". number_format($team['blue']['v_scores'], "0", "", ",") . "\n";
+		echo "    - Total War Score: ". number_format($team['blue']['scores'], "0", "", ",") ."\n";
 		echo "    - Kills: ". number_format($team['blue']['kills'], "0", "", ",") ."\n";
 		echo "    - Deaths: ". number_format($team['blue']['deaths'], "0", "", ",") ."\n";
 		echo "    - KDR: ". @number_format(($team['blue']['kills']/$team['blue']['deaths']), 2, '.', '') ."\n";
 
 		echo "   Green Team: ". $server_name[$team['green']['host']] ." ".$guest_name['green']."\n";
-		echo "    - Score: ". number_format($team['green']['scores'], "0", "", ",") ."\n";
+		echo "    - Victory Point: ". number_format($team['green']['v_scores'], "0", "", ",") . "\n";
+		echo "    - Total War Score: ". number_format($team['green']['scores'], "0", "", ",") ."\n";
 		echo "    - Kills: ". number_format($team['green']['kills'], "0", "", ",") ."\n";
 		echo "    - Deaths: ". number_format($team['green']['deaths'], "0", "", ",") ."\n";
 		echo "    - KDR: ". @number_format(($team['green']['kills']/$team['green']['deaths']), 2, '.', '') ."\n";
